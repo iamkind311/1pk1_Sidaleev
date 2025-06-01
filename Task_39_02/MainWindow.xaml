@@ -1,0 +1,35 @@
+﻿<Window x:Class="Task_39_02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Список покупок" Height="450" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Поле ввода нового продукта -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBox x:Name="NewItemTextBox" Width="200" Margin="0,0,10,0"/>
+            <Button Content="Добавить" Click="AddButton_Click" Width="80"/>
+        </StackPanel>
+
+        <!-- Кнопки управления списком -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,10">
+            <Button Content="Удалить" Click="RemoveButton_Click" Width="80" Margin="0,0,10,0"/>
+            <Button Content="Сохранить" Click="SaveButton_Click" Width="80" Margin="0,0,10,0"/>
+            <Button Content="Загрузить" Click="LoadButton_Click" Width="80"/>
+        </StackPanel>
+
+        <!-- Список продуктов -->
+        <ListBox x:Name="ShoppingListBox" Grid.Row="2" Margin="0,0,0,10"/>
+
+        <!-- Статус -->
+        <TextBlock x:Name="StatusTextBlock" Grid.Row="3" TextWrapping="Wrap"/>
+    </Grid>
+</Window>
